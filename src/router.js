@@ -2,8 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 /* Components */
-import indexPage from './pages/Index/Index'
-import docPage from './pages/Docs/Docs'
+import indexPage from './views/Index'
 
 Vue.use(VueRouter)
 
@@ -17,9 +16,10 @@ export default new VueRouter({
             component: indexPage
         },
         {
-            path: '/docs',
-            name: 'doc',
-            component: docPage
+            path: '/support-us',
+            beforeEnter() {
+                window.location = "https://www.patreon.com/bePatron?u=22507086"
+            }
         }
     ]
 });
