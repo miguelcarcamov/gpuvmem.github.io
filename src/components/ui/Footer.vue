@@ -8,7 +8,7 @@
                 The software is under GNU General Public v3.0 license
             </v-flex>
             <v-flex class="row-footer">
-                Developed by Miguel Cárcamo V.
+                Developed by Radioastronomy-USACH-UCH-MAN
             </v-flex>
         </v-layout>
     </v-container>

@@ -2,11 +2,7 @@
   <v-app>
     <AppNav></AppNav>
     <v-content>
-      <v-container>
-        <v-layout>
-          <router-view></router-view>
-        </v-layout>
-      </v-container>
+      <router-view></router-view>
     </v-content>
     <AppFooter></AppFooter>
   </v-app>
