@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-parallax :src="images.background" height="100%" class="nav-parallax">
+        <v-parallax :src="images.background" class="nav-parallax">
             <v-layout row wrap>
                 <v-flex xs8>
                     <v-img :src="images.logo" height="300" width="350" position="top 0px left 0px" class="nav-logo"></v-img>
@@ -36,7 +36,7 @@
         data: () => ({
             images: {
                 logo: require('@/assets/logo_gpuvmem_white.png'),
-                background: require('@/assets/astronomy_image_2.jpg')
+                background: require('@/assets/astronomy_image_3.jpg')
             }
         })
     }
@@ -44,17 +44,24 @@
 
 <style scoped>
     .nav-parallax {
-        height: 750px;
+        height: 650px;
         opacity: 0.95;
     }
 
     .nav-links {
+        font-weight: bolder;
         font-size: 14px;
         margin-top: 150px;
+        text-decoration: none;
     }
     
     .nav-links :hover {
-        color: #000;
+        color: #000000;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
     }
     
 </style>
