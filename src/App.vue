@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <AppNav></AppNav>
     <v-content>
       <router-view></router-view>
@@ -23,3 +23,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+  #app {
+    font-family: 'Montserrat', sans-serif;
+  }
+</style>
