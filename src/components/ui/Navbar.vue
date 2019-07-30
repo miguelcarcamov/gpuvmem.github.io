@@ -1,39 +1,90 @@
 <template>
-    <div>
-        <v-parallax :src="images.background" class="nav-parallax">
-            <v-layout row wrap>
-                <v-flex xs8>
-                    <v-img :src="images.logo" height="300" width="350" position="top 0px left 0px" class="nav-logo"></v-img>
-                </v-flex>
-                <v-flex xs4>
-                    <v-layout row wrap class="nav-links">
-                        <v-flex>
-                            <h3>DOCUMENTATION</h3>
-                        </v-flex>
-                        <v-flex>
-                            <h3>CONTACT US</h3>
-                        </v-flex>
-                        <v-flex>
-                            <!-- TODO Cambiar por un boton que indique es que patreon -->
-                            <h3><router-link to="/support-us">SUPPORT US</router-link></h3>
-                        </v-flex>
-                        <v-flex>
-                            <v-icon medium dark>mdi-github-circle</v-icon>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
+    <section>
+        <!-- Display only in devices like smartphones -->
+        <v-navigation-drawer
+            v-model="drawer"
+            fixed
+            right
+            app>
+            <v-list shaped>
+                <v-subheader>
+                    <v-btn @click.stop="drawer = !drawer" icon> 
+                        <v-icon icon>mdi-close</v-icon>
+                    </v-btn>
+                </v-subheader>
+                <v-list-item-group>
+                    <v-divider></v-divider>
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-memory</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title> Documentation </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-divider></v-divider>
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-email</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title> Contact Us </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-divider></v-divider>
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-github-circle</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title> GitHub </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-divider></v-divider>
+                </v-list-item-group>
+            </v-list>
+        </v-navigation-drawer>
+
+        <!-- Navbar -->
+        <v-toolbar dark>
+            <v-toolbar-title></v-toolbar-title>
+            <v-spacer></v-spacer>
+            <!-- Mobile section show drawer -->
+            <v-toolbar-items class="hidden-md-and-up">
+                <v-btn icon @click.stop="drawer = !drawer" class="hidden-md-and-up">
+                    <v-icon>mdi-menu</v-icon>
+                </v-btn>
+            </v-toolbar-items>
+            <!-- Desktop section show navbar -->
+            <v-toolbar-items class="hidden-sm-and-down">
+                <v-btn text>Documentation</v-btn>
+                <v-btn text>Contact us</v-btn>
+                <v-btn icon>
+                    <v-icon>mdi-github-circle</v-icon>
+                </v-btn>
+            </v-toolbar-items>
+
+        </v-toolbar>
+        <v-parallax :src="images.background" height="600">
+          <v-layout
+            column
+            align-center
+            justify-center
+            class="white--text"
+          >
+            <!-- Logo -->
+            <v-img :src="images.logo" max-height="500" max-width="400"></v-img>
+          </v-layout>
         </v-parallax>
-    </div>
+      </section>
 </template>
 
 
 <script>
-    //TODO Hacer un if para cambiar de jumbotron a navbar
-
     export default {
         name: 'AppNav',
         data: () => ({
+            drawer: false,
             images: {
                 logo: require('@/assets/logo_gpuvmem_white.png'),
                 background: require('@/assets/astronomy_image_3.jpg')
@@ -43,25 +94,4 @@
 </script>
 
 <style scoped>
-    .nav-parallax {
-        height: 650px;
-        opacity: 0.95;
-    }
-
-    .nav-links {
-        font-weight: bolder;
-        font-size: 14px;
-        margin-top: 150px;
-        text-decoration: none;
-    }
-    
-    .nav-links :hover {
-        color: #000000;
-    }
-
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-    }
-    
 </style>
