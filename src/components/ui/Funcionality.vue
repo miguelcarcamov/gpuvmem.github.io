@@ -16,6 +16,6 @@
 <script>
 export default {
     name: "funcionality",
-    props: ["title", "text", "image"],
+    props: ["title", "text", "image"]
 }
 </script>

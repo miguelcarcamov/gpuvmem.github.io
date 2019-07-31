@@ -34,19 +34,40 @@
                     <v-divider></v-divider>
                     <v-list-item>
                         <v-list-item-icon>
+                            <v-icon>mdi-account-supervisor-circle</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title> Support us </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    
+                    <v-divider></v-divider>
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-dev-to</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title> Developers </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    
+                    <v-divider></v-divider>
+                    <v-list-item href="https://github.com/radioastronomy-usach-uch-man" target="_blank">
+                        <v-list-item-icon>
                             <v-icon>mdi-github-circle</v-icon>
                         </v-list-item-icon>
                         <v-list-item-content>
                             <v-list-item-title> GitHub </v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
+                    
                     <v-divider></v-divider>
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>
 
         <!-- Navbar -->
-        <v-toolbar dark color="#232026">
+        <v-toolbar dark color="#272a3b">
             <v-toolbar-title></v-toolbar-title>
             <v-spacer></v-spacer>
             <!-- Mobile section show drawer -->
@@ -59,7 +80,9 @@
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-btn text>Documentation</v-btn>
                 <v-btn text>Contact us</v-btn>
-                <v-btn icon>
+                <v-btn text>Support us</v-btn>
+                <v-btn text>Developers</v-btn>
+                <v-btn icon href="https://github.com/radioastronomy-usach-uch-man" target="_blank">
                     <v-icon>mdi-github-circle</v-icon>
                 </v-btn>
             </v-toolbar-items>
@@ -73,7 +96,7 @@
             class="white--text"
           >
             <!-- Logo -->
-            <v-img :src="images.logo" max-height="500" max-width="400"></v-img>
+            <v-img :src="images.logo"  max-width="100%" min-width="375"></v-img>
           </v-layout>
         </v-parallax>
       </section>
@@ -87,7 +110,7 @@
             drawer: false,
             images: {
                 logo: require('@/assets/logo_gpuvmem_white.png'),
-                background: require('@/assets/astronomy_image_3.jpg')
+                background: require('@/assets/astronomy_image_1.jpg')
             }
         })
     }

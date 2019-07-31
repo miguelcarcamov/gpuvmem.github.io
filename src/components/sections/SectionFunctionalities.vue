@@ -1,17 +1,40 @@
 <template>
-    <v-container fluid fill-height pa-0 ma-0>
-        <v-layout align-center justify-center row class="section">
-            <v-flex xs12 md3>
-                <p>holas</p>
-            </v-flex>
-        </v-layout>
-    </v-container>
+    <section>
+        <v-parallax :src="background" height="400">
+          <v-layout column align-center justify-center>
+            <div class="headline white--text mb-4 text-center">{{ title }}</div>
+            <em>{{ subtitle }}</em>
+            <v-btn
+              class="mt-12"
+              color="blue lighten-2"
+              dark
+              large
+            >
+              Get Started
+            </v-btn>
+          </v-layout>
+        </v-parallax>
+      </section>
 </template>
 
 <script>
-    export default {
-        name: 'sectionFunctionalities'
+export default {
+    name: 'sectionFunctionalities',
+    data: () => ({
+        drawer: false,
+    }),
+    computed: {
+      title() {
+        return this.$store.state.home.funcionalities.title;
+      },
+      subtitle() {
+        return this.$store.state.home.funcionalities.subtitle;
+      },
+      background() {
+        return this.$store.state.home.funcionalities.background;
+      }
     }
+}
 </script>
 
 <style scoped>

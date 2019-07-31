@@ -1,19 +1,22 @@
 <template>
     <div>
-        <section-icon></section-icon>
+        <section-overview></section-overview>
         <section-functionalities></section-functionalities>
+        <section-organization></section-organization>
     </div>
 </template>
 
 <script>
-    import SectionIcon from '../components/sections/SectionIcon'
+    import SectionOverview from '../components/sections/SectionOverview'
     import SectionFunctionalities from '../components/sections/SectionFunctionalities'
+    import SectionOrganization from '../components/sections/SectionOrganization'
 
     export default {
         name: 'index',
         components: {
-            SectionIcon,
-            SectionFunctionalities
+            SectionOverview,
+            SectionFunctionalities,
+            SectionOrganization
         }
     }
 </script>

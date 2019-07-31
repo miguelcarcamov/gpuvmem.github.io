@@ -8,16 +8,16 @@
         >
             <v-flex xs12 sm4 class="my-4">
                 <div class="text-center">
-                    <h2 class="headline">The best way to start developing</h2>
+                    <h2 class="headline"> {{ title }}</h2>
                     <span class="subheading">
-                        Cras facilisis mi vitae nunc
+                        {{ subtitle }}
                     </span>
                 </div>
             </v-flex>
           <v-flex xs12>
               <v-container grid-list-xl>
                 <v-layout row wrap align-center justify-center>
-                    <funcionality v-for="f in funcionalities" :key="f.title" :title="f.title" :text="f.text" :image="f.image"></funcionality>
+                    <funcionality v-for="f in cards" :key="f.title" :title="f.title" :text="f.text" :image="f.image"></funcionality>
                 </v-layout>
             </v-container>
           </v-flex>
@@ -28,13 +28,19 @@
 <script>
 import funcionality from "../ui/Funcionality.vue"
 export default {
-    name: 'sectionIcon',
+    name: 'sectionOverview',
     components: {
         funcionality,
     },
     computed: {
-        funcionalities () {
-            return this.$store.state.funcionalities.cards;
+        cards () {
+            return this.$store.state.home.overview.cards;
+        },
+        title () {
+            return this.$store.state.home.overview.title;
+        },
+        subtitle () {
+            return this.$store.state.home.overview.subtitle;
         }
     }
 }

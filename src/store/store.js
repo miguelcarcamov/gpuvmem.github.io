@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import * as funcionalities from './funcionalities.js'
+import * as home from './home.js'
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     modules: {
-      funcionalities,
+      home,
     },
     state: {
   
