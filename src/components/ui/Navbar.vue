@@ -25,10 +25,10 @@
                     <v-divider></v-divider>
                     <v-list-item>
                         <v-list-item-icon>
-                            <v-icon>mdi-email</v-icon>
+                            <v-icon>mdi-dev-to</v-icon>
                         </v-list-item-icon>
                         <v-list-item-content>
-                            <v-list-item-title> Contact Us </v-list-item-title>
+                            <v-list-item-title> Developers </v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
                     <v-divider></v-divider>
@@ -44,10 +44,10 @@
                     <v-divider></v-divider>
                     <v-list-item>
                         <v-list-item-icon>
-                            <v-icon>mdi-dev-to</v-icon>
+                            <v-icon>mdi-email</v-icon>
                         </v-list-item-icon>
                         <v-list-item-content>
-                            <v-list-item-title> Developers </v-list-item-title>
+                            <v-list-item-title> Contact Us </v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
                     
@@ -79,9 +79,9 @@
             <!-- Desktop section show navbar -->
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-btn text>Documentation</v-btn>
-                <v-btn text>Contact us</v-btn>
-                <v-btn text>Support us</v-btn>
                 <v-btn text>Developers</v-btn>
+                <v-btn text>Support us</v-btn>
+                <v-btn text>Contact us</v-btn>
                 <v-btn icon href="https://github.com/radioastronomy-usach-uch-man" target="_blank">
                     <v-icon>mdi-github-circle</v-icon>
                 </v-btn>
@@ -96,7 +96,8 @@
             class="white--text"
           >
             <!-- Logo -->
-            <v-img :src="images.logo"  max-width="100%" min-width="375"></v-img>
+            <v-img :src="images.logo"  max-width="600" width="100%" contain class="hidden-sm-and-down"></v-img>
+            <v-img :src="images.logosmall"  max-width="400" width="100%" contain class="hidden-md-and-up"></v-img>
           </v-layout>
         </v-parallax>
       </section>
@@ -110,6 +111,7 @@
             drawer: false,
             images: {
                 logo: require('@/assets/logo_gpuvmem_white.png'),
+                logosmall: require('@/assets/main_logo_white.png'),
                 background: require('@/assets/astronomy_image_1.jpg')
             }
         })
