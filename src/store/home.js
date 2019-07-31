@@ -1,7 +1,7 @@
 export const state = {
     overview: {
-        title: "The best way to start developing",
-        subtitle: "Cras facilisis mi vitae nunc",
+        title: "What is GPUVMEM?",
+        subtitle: "In a nutshell...",
         cards: [
             {
                 title: "Graphical Processing Unit",
@@ -21,9 +21,9 @@ export const state = {
         ]
     },
     funcionalities: {
-        title: "Funcionalities",
-        subtitle: "I'm very tired",
-        background: "https://upload.wikimedia.org/wikipedia/commons/b/b4/ALMA_and_a_Starry_Night.jpg"
+        title: "Let's use GPUVMEM to deconvolve some radio datasets",
+        subtitle: "",
+        background: require('@/assets/astronomy_image_4.jpg')
     },
     organization: {
         description: "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.",
@@ -34,7 +34,7 @@ export const state = {
             },
             {
                 icon: "mdi-map-marker",
-                text: "Santiago, Chile - Manchester, England"
+                text: "Santiago, Chile - Manchester, UK"
             },
             {
                 icon: "mdi-email",
