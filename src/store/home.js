@@ -23,7 +23,7 @@ export const state = {
     funcionalities: {
         title: "Funcionalities",
         subtitle: "I'm very tired",
-        background: "http://www.miguelclaro.com/wp/wp-content/uploads/2016/01/ALMA-PlateauTwilight_5733-net.jpg"
+        background: "https://upload.wikimedia.org/wikipedia/commons/b/b4/ALMA_and_a_Starry_Night.jpg"
     },
     organization: {
         description: "Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.",
