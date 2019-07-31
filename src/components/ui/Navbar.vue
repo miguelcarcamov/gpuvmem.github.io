@@ -46,7 +46,7 @@
         </v-navigation-drawer>
 
         <!-- Navbar -->
-        <v-toolbar dark>
+        <v-toolbar dark color="#232026">
             <v-toolbar-title></v-toolbar-title>
             <v-spacer></v-spacer>
             <!-- Mobile section show drawer -->

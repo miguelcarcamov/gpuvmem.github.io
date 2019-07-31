@@ -1,66 +1,43 @@
 <template>
-    <v-container fluid fill-height pa-0 ma-0>
-        <v-layout align-center justify-center row class="section">
-            <v-flex xs12 md3>
-                <v-layout row>
-                    <v-flex xs12>
-                        <div class="section-img">
-                            <img v-bind:src="images.gpu_icon" height="100px" width="100px"/>
-                        </div>
-                    </v-flex>
-                    <v-flex xs12 class="section-flex">
-                        <p>Graphical Processing Unit</p>
-                    </v-flex>
-                    <v-flex xs12 class="section-flex-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cum cupiditate dicta dignissimos dolores fugit illum, incidunt itaque minus obcaecati quis recusandae repellendus repudiandae sapiente sint, tempore unde vitae voluptatem.</p>
-                    </v-flex>
-                </v-layout>
+    <section>
+        <v-layout
+          column
+          wrap
+          class="my-12"
+          align-center
+        >
+            <v-flex xs12 sm4 class="my-4">
+                <div class="text-center">
+                    <h2 class="headline">The best way to start developing</h2>
+                    <span class="subheading">
+                        Cras facilisis mi vitae nunc
+                    </span>
+                </div>
             </v-flex>
-            <v-flex xs12 md3>
-                <v-layout row>
-                    <v-flex xs12>
-                        <div class="section-img">
-                            <img v-bind:src="images.framework_icon" height="100px" width="100px"/>
-                        </div>
-                    </v-flex>
-                    <v-flex xs12 class="section-flex">
-                        <p>Framework</p>
-                    </v-flex>
-                    <v-flex xs12 class="section-flex-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium consectetur cumque earum error fuga inventore maxime nam odio, odit placeat quo, unde, veritatis? Animi aperiam enim id nemo unde.</p>
-                    </v-flex>
+          <v-flex xs12>
+              <v-container grid-list-xl>
+                <v-layout row wrap align-center justify-center>
+                    <funcionality v-for="f in funcionalities" :key="f.title" :title="f.title" :text="f.text" :image="f.image"></funcionality>
                 </v-layout>
-            </v-flex>
-            <v-flex xs12 md3>
-                <v-layout row>
-                    <v-flex xs12>
-                        <div class="section-img">
-                            <img v-bind:src="images.gpu_icon" height="100" width="100"/>
-                        </div>
-                    </v-flex>
-                    <v-flex xs12 class="section-flex">
-                        <p>holaaaaa</p>
-                    </v-flex>
-                    <v-flex xs12 class="section-flex-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur autem beatae distinctio, dolores dolorum eaque est in magnam nemo non odit placeat provident, repellendus sequi temporibus ullam vel veritatis vero.</p>
-                    </v-flex>
-                </v-layout>
-            </v-flex>
+            </v-container>
+          </v-flex>
         </v-layout>
-    </v-container>
+    </section>
 </template>
 
 <script>
-    export default {
-        name: 'sectionIcon',
-        data: () => ({
-            images: {
-                gpu_icon: require("@/assets/gpu_icon.svg"),
-                antenna_icon: require("@/assets/antenna_icon.svg"),
-                framework_icon: require("@/assets/framework_icon.png")
-            }
-        })
+import funcionality from "../ui/Funcionality.vue"
+export default {
+    name: 'sectionIcon',
+    components: {
+        funcionality,
+    },
+    computed: {
+        funcionalities () {
+            return this.$store.state.funcionalities.cards;
+        }
     }
+}
 </script>
 
 <style scoped>
