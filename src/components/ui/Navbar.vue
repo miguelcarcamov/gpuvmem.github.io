@@ -68,6 +68,9 @@
 
         <!-- Navbar -->
         <v-toolbar dark color="#272a3b">
+             <router-link to="/">
+                <v-img :src="images.logo" contain max-width="200px" max-height="200px"></v-img>
+             </router-link>
             <v-toolbar-title></v-toolbar-title>
             <v-spacer></v-spacer>
             <!-- Mobile section show drawer -->
@@ -78,9 +81,9 @@
             </v-toolbar-items>
             <!-- Desktop section show navbar -->
             <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn text>Documentation</v-btn>
+                <v-btn text to="/docs">Documentation</v-btn>
                 <v-btn text>Developers</v-btn>
-                <v-btn text>Support us</v-btn>
+                <v-btn text href="https://www.patreon.com/bePatron?u=22507086" target="_blank">Support us</v-btn>
                 <v-btn text>Contact us</v-btn>
                 <v-btn icon href="https://github.com/radioastronomy-usach-uch-man" target="_blank">
                     <v-icon>mdi-github-circle</v-icon>
@@ -88,18 +91,6 @@
             </v-toolbar-items>
 
         </v-toolbar>
-        <v-parallax :src="images.background" height="600">
-          <v-layout
-            column
-            align-center
-            justify-center
-            class="white--text"
-          >
-            <!-- Logo -->
-            <v-img :src="images.logo"  max-width="600" width="100%" contain class="hidden-sm-and-down"></v-img>
-            <v-img :src="images.logosmall"  max-width="400" width="100%" contain class="hidden-md-and-up"></v-img>
-          </v-layout>
-        </v-parallax>
       </section>
 </template>
 
@@ -112,7 +103,6 @@
             images: {
                 logo: require('@/assets/logo_gpuvmem_white.png'),
                 logosmall: require('@/assets/main_logo_white.png'),
-                background: require('@/assets/astronomy_image_1.jpg')
             }
         })
     }
