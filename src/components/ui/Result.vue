@@ -43,6 +43,7 @@ export default {
         },
         cmOption(){
             return {
+                readOnly: true,
                 tabSize: 4,
                 styleActiveLine: false,
                 lineNumbers: true,
