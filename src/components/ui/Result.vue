@@ -1,5 +1,5 @@
 <template>
-    <v-layout row wrap class="my-5">
+    <v-layout column class="my-5">
         <!--TITLE AND DESCRIPTION-->
         <v-container  align-center>
             <v-flex xs12>
@@ -12,20 +12,22 @@
             </v-flex>
         </v-container>
         <v-container grid-list-md>
-            <v-layout alig wrap>
-                <v-flex xs4>
+            <v-layout align wrap>
+                <v-flex xs5>
                     <v-card dark color="primary">
                         <codemirror v-model="code" :options="cmOption"></codemirror>
                     </v-card>
                 </v-flex>
                 <v-flex xs4>
-                    <v-card dark color="primary">
-                        <v-card-text class="px-0">Image 1</v-card-text>
+                    <v-card dark height="100%">
+                        <div class="JS9Menubar" data-width="100%"></div>
+                        <div class="JS9" data-width="100%" data-height="100%"></div>
+                        <div class="JS9Colorbar mt-1" data-width="100%"></div>
                     </v-card>
                 </v-flex>
-                <v-flex xs4>
+                <v-flex xs3>
                     <v-card dark color="primary">
-                        <v-card-text class="px-0">Image 2</v-card-text>
+                        
                     </v-card>
                 </v-flex>
             </v-layout>
@@ -59,6 +61,9 @@ export default {
                 theme: "monokai",
             }
         }
+    },
+    created() {
+        JS9.init();
     }
 }
 </script>
