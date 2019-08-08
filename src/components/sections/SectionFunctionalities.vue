@@ -31,7 +31,7 @@ export default {
         return this.$store.state.home.funcionalities.subtitle;
       },
       background() {
-        return this.$store.state.home.funcionalities.background;
+      	return this.$store.state.home.funcionalities.background;
       }
     }
 }
