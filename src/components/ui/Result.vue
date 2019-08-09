@@ -20,9 +20,9 @@
                 </v-flex>
                 <v-flex xs4>
                     <v-card dark height="100%">
-                        <div class="JS9Menubar" data-width="100%"></div>
-                        <div class="JS9" data-width="100%" data-height="100%"></div>
-                        <div class="JS9Colorbar mt-1" data-width="100%"></div>
+                        <div class="JS9Menubar" id="JS9" data-width="100%"></div>
+                        <div class="JS9" id="JS9" data-width="100%" data-height="100%"></div>
+                        <div class="JS9Colorbar mt-1" id="JS9" data-width="100%"></div>
                     </v-card>
                 </v-flex>
                 <v-flex xs3>
@@ -39,6 +39,17 @@
 export default {
     name: "result",
     props: ["id", "title", "description"],
+    data: () => ({
+        fits: [
+            "/home/javier/Desktop/Trabajos/gpuvmem-web/src/assets/test_1.fits"
+        ],
+        opts: [
+            {
+                parentFile: "/home/javier/Desktop/Trabajos/gpuvmem-web/src/assets/test_1.fits",
+                colormap: "cool"
+            }
+        ]
+    }),
     computed: {
         code(){
             return "# include <stdio>\nint main(){}"
@@ -60,11 +71,14 @@ export default {
                 showCursorWhenSelecting: true,
                 theme: "monokai",
             }
-        }
+        },
     },
     created() {
+        // eslint-disable-next-line no-console
         JS9.init();
+        JS9.imageOpts.wcsunits = "degrees";
+        JS9.Preload('http://js9.si.edu/js9/fits/casa.fits')
+        //JS9.Preload(this.fits[0], this.opts[0]);
     }
 }
 </script>
-
