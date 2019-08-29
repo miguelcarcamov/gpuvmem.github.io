@@ -20,14 +20,18 @@
                 </v-flex>
                 <v-flex xs4>
                     <v-card dark height="100%">
-                        <div class="JS9Menubar" id="JS9" data-width="100%"></div>
-                        <div class="JS9" id="JS9" data-width="100%" data-height="100%"></div>
-                        <div class="JS9Colorbar mt-1" id="JS9" data-width="100%"></div>
+                        
                     </v-card>
                 </v-flex>
                 <v-flex xs3>
-                    <v-card dark color="primary">
-                        
+                    <v-card>
+                        <v-fits
+                            id="3"
+                            source="http://avro.alerce.online/get_stamp?oid=ZTF18ablpycj&candid=580469734915015004&type=science&format=fits"
+                            width=400
+                            height=400
+                            :display="display"
+                        />
                     </v-card>
                 </v-flex>
             </v-layout>
@@ -36,6 +40,7 @@
     </v-layout>
 </template>
 <script>
+import VFits from 'vue-fits/src/components/VFits.vue'
 export default {
     name: "result",
     props: ["id", "title", "description"],
@@ -48,8 +53,20 @@ export default {
                 parentFile: "/home/javier/Desktop/Trabajos/gpuvmem-web/src/assets/test_1.fits",
                 colormap: "cool"
             }
-        ]
+        ],
+      source: 'https://www.dl.dropboxusercontent.com/s/vdm4hl7h51fuhho/mod_out.fits',
+      width: 512,
+      height: 512,
+      display: {
+        menubar: false,
+        toolbar: true,
+        main: true,
+        colorbar: true
+      }
     }),
+    components: {
+        VFits
+    },
     computed: {
         code(){
             return "# include <stdio>\nint main(){}"
@@ -73,12 +90,5 @@ export default {
             }
         },
     },
-    created() {
-        // eslint-disable-next-line no-console
-        JS9.init();
-        JS9.imageOpts.wcsunits = "degrees";
-        JS9.Preload('http://js9.si.edu/js9/fits/casa.fits')
-        //JS9.Preload(this.fits[0], this.opts[0]);
-    }
 }
 </script>
