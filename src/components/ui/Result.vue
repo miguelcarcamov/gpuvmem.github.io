@@ -27,9 +27,9 @@
                     <v-card>
                         <v-fits
                             id="3"
-                            source="http://avro.alerce.online/get_stamp?oid=ZTF18ablpycj&candid=580469734915015004&type=science&format=fits"
-                            width=400
-                            height=400
+                            :source="source"
+                            :width="width"
+                            :height="height"
                             :display="display"
                         />
                     </v-card>
@@ -59,7 +59,7 @@ export default {
       height: 512,
       display: {
         menubar: false,
-        toolbar: true,
+        toolbar: false,
         main: true,
         colorbar: true
       }
