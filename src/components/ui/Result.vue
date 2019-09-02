@@ -30,7 +30,10 @@
                             :source="source"
                             :width="width"
                             :height="height"
-                            :display="display"
+                            :menubar="true"
+                            :toolbar="true"
+                            :main="true"
+                            :colorbar="true"
                         />
                     </v-card>
                 </v-flex>
@@ -45,24 +48,9 @@ export default {
     name: "result",
     props: ["id", "title", "description"],
     data: () => ({
-        fits: [
-            "/home/javier/Desktop/Trabajos/gpuvmem-web/src/assets/test_1.fits"
-        ],
-        opts: [
-            {
-                parentFile: "/home/javier/Desktop/Trabajos/gpuvmem-web/src/assets/test_1.fits",
-                colormap: "cool"
-            }
-        ],
       source: 'https://www.dl.dropboxusercontent.com/s/vdm4hl7h51fuhho/mod_out.fits',
-      width: 512,
-      height: 512,
-      display: {
-        menubar: false,
-        toolbar: false,
-        main: true,
-        colorbar: true
-      }
+      width: "512px",
+      height: "512px",
     }),
     components: {
         VFits
